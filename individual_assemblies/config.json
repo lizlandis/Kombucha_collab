@@ -1,0 +1,77 @@
+{
+    "samples_txt": "samples.txt",
+
+    "all_against_all": true,
+
+    "anvi_gen_contigs_database": {
+        "--project-name": "{group}",
+        "threads": 5
+    },
+
+    "centrifuge": {
+        "run": "false"
+    },
+
+    "anvi_run_hmms": {
+        "run": true,
+        "threads": 20
+    },
+
+    "anvi_run_ncbi_cogs": {
+        "run": true,
+        "threads": 5
+    },
+
+    "anvi_script_reformat_fasta": {
+        "run": true,
+        "--simplify-names": true
+    },
+
+    "idba_ud": {
+        "run": true,
+        "--min_contig": 1000,
+        "threads": 11
+    },
+
+    "iu_filter_quality_minoche": {
+        "run": true,
+        "--ignore-deflines": true,
+        "threads": 2
+    },
+
+    "gzip_fastqs": {
+        "run": true
+    },
+
+    "bowtie_build": {
+        "threads": 10
+    },
+
+    "bowtie": {
+        "additional_params": "--no-unal",
+        "threads": 10
+    },
+
+    "samtools_view": {
+        "additional_params": "-F 4",
+        "threads": 4
+    },
+
+    "anvi_init_bam": {
+        "threads": 4
+    },
+
+    "anvi_profile": {
+        "threads": 5,
+        "--sample-name": "{sample}",
+        "--overwrite-output-destinations": true
+    },
+
+    "anvi_merge": {
+        "--sample-name": "{group}",
+        "--overwrite-output-destinations": true,
+        "--skip-hierarchical-clustering": true,
+        "--skip-concoct-binning": true,
+        "threads": 6
+    }
+}
